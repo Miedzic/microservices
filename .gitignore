@@ -39,3 +39,4 @@ build/
 .vscode/
 
 elasticsearch-7.17.6/
+zipkin.jar
