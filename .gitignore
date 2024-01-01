@@ -5,6 +5,7 @@ HELP.md
 **/target/
 **/mvnw
 **/mvnw.cmd
+**/.mvn/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -36,3 +37,5 @@ build/
 
 ### VS Code ###
 .vscode/
+
+elasticsearch-7.17.6/
