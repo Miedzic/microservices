@@ -1,0 +1,23 @@
+{
+  "namespace": "com.example.common.kafka",
+  "type": "record",
+  "name": "ProductKafka",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "prize",
+      "type": "double"
+    },
+    {
+      "name": "quantity",
+      "type": "long"
+    }
+  ]
+}

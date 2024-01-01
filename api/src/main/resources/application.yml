@@ -1,0 +1,9 @@
+server:
+  port: 8768
+
+spring:
+  application:
+    name: api-service
+  graphql:
+    graphiql:
+      enabled: true

@@ -1,0 +1,30 @@
+server:
+  port: 8765
+
+spring:
+  application:
+    name: notification-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/notification-service?useSSL=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Warsaw&autoReconnect=true&characterEncoding=UTF-8&useUnicode=yes
+    username: ${RDS_USERNAME:root}
+    password: ${RDS_PASSWORD:matim198}
+  jpa:
+    hibernate:
+      ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: robert.miedzic@gmail.com
+    password: aedltumigwdnftou
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: smtp.gmail.com
+          auth: true
+          starttls:
+            enable: true
+            required: true
+        transport:
+          protocole: smtp
+

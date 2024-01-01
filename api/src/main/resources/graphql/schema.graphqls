@@ -1,0 +1,12 @@
+type TestDto{
+    id: Int
+    name: String
+}
+type Query{
+    findById(id:Int): TestDto
+    findAll: [TestDto]
+}
+type Mutation{
+    save(name:String): TestDto
+
+}

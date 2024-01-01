@@ -1,0 +1,7 @@
+{
+  "email": "%s",
+  "templateName": "user register",
+  "variables": {
+    "name": "Stefan"
+  }
+}

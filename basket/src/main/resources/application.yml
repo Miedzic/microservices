@@ -1,0 +1,41 @@
+server:
+  port: 8763
+
+spring:
+  application:
+    name: basket-service
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+    properties:
+      schema:
+        registry:
+          url: http://localhost:8081
+    template:
+      default-topic:
+jwt:
+  publicKey: classpath:public-key.pem
+  privateKey: classpath:pkcs8.key
+resilience4j:
+  circuitbreaker:
+    instances:
+      product:
+        slidingWindowsSize: 10
+        failureRateThreshold: 10
+        minimumNumberOfCalls: 5
+        waitDurationInOpenState: 120000
+        permittedNumberOfCallsInHalfOpenState: 2
+  ratelimiter:
+    instances:
+      product:
+        timeoutDuration: 1
+        limitForPeriod: 3
+        limitRefreshPeriod: 10s
+  retry:
+    instances:
+      user:
+        maxAttempts: 5
+        waitDuration: 1s
+        enableExponentialBackoff: true
+        exponentialBackoffMultiplier: 2

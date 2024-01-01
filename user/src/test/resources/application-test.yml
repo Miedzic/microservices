@@ -1,0 +1,14 @@
+spring:
+  zipkin:
+    enabled: false
+  cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            notification-service[0]:
+              uri: http://localhost:8754
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false

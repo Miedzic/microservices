@@ -1,0 +1,16 @@
+spring:
+  zipkin:
+    enabled: false
+  cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            user-service[0]:
+              uri: http://localhost:8765
+            product-service[0]:
+              uri: http://localhost:8764
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false

@@ -1,0 +1,17 @@
+server:
+  port: 8770
+
+spring:
+  application:
+    name: statistic-service
+  kafka:
+    consumer:
+      group-id: statistic-consumer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+    properties:
+      schema:
+        registry:
+          url: http://localhost:8081
+    template:
+      default-topic:
